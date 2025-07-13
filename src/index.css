@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cosmic Blue Knowledge Nebula Theme */
+    --background: 220 27% 8%;
+    --foreground: 220 15% 95%;
+    --card: 220 27% 10%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 27% 10%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 220 91% 65%;
+    --primary-foreground: 220 27% 8%;
+    --secondary: 220 27% 15%;
+    --secondary-foreground: 220 15% 95%;
+    --muted: 220 27% 12%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 45 96% 65%;
+    --accent-foreground: 220 27% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 95%;
+    --border: 220 27% 18%;
+    --input: 220 27% 15%;
+    --ring: 220 91% 65%;
+    --radius: 0.75rem;
+    
+    /* Custom Vaubien Colors */
+    --cosmic-blue: 220 91% 65%;
+    --deep-space: 220 27% 8%;
+    --nebula-glow: 220 91% 75%;
+    --golden-path: 45 96% 65%;
+    --stellar-silver: 220 15% 85%;
+    --void-black: 220 40% 4%;
+    
+    /* Gradients */
+    --cosmic-gradient: linear-gradient(135deg, hsl(220 91% 65%) 0%, hsl(260 91% 65%) 50%, hsl(45 96% 65%) 100%);
+    --nebula-gradient: linear-gradient(180deg, hsl(220 27% 8%) 0%, hsl(220 91% 15%) 50%, hsl(220 27% 8%) 100%);
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 220 15% 95%;
+    --card: 220 27% 10%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 27% 10%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 220 91% 65%;
+    --primary-foreground: 220 27% 8%;
+    --secondary: 220 27% 15%;
+    --secondary-foreground: 220 15% 95%;
+    --muted: 220 27% 12%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 45 96% 65%;
+    --accent-foreground: 220 27% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 95%;
+    --border: 220 27% 18%;
+    --input: 220 27% 15%;
+    --ring: 220 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: radial-gradient(ellipse at top, hsl(220 91% 15%) 0%, hsl(220 27% 8%) 50%, hsl(220 40% 4%) 100%);
+    min-height: 100vh;
+  }
+  
+  .cosmic-glow {
+    box-shadow: 0 0 20px hsl(220 91% 65% / 0.3), 0 0 40px hsl(220 91% 65% / 0.1);
+  }
+  
+  .golden-glow {
+    box-shadow: 0 0 20px hsl(45 96% 65% / 0.3), 0 0 40px hsl(45 96% 65% / 0.1);
+  }
+  
+  .nebula-text {
+    background: linear-gradient(135deg, hsl(220 91% 75%) 0%, hsl(45 96% 75%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .skill-node {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .skill-node:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+@layer components {
+  .cosmic-border {
+    @apply border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(220 91% 65% / 0.3); }
+    to { box-shadow: 0 0 30px hsl(220 91% 65% / 0.6), 0 0 60px hsl(220 91% 65% / 0.3); }
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px hsl(220 91% 65% / 0.5);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 27% 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220 91% 65%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 91% 75%);
+}
